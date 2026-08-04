@@ -20,5 +20,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./themes/
-        server-dir: /kodai-yoshida.dev/wp-content/themes
+        server-dir: /home/users/1/main.jp-yoshida-web/web/kodai-yoshida.dev/wp-content/themes
         delete-clean: false
