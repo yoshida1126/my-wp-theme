@@ -1,0 +1,1259 @@
+@charset 'UTF-8';
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "IBM Plex Sans JP", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #081B23;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7em;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 15px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    img {
+        width: 25px;
+        object-fit: cover;
+        margin-right: 5px;
+    }
+    h1 {
+        font-size: 16px;
+    }
+}
+
+.tel {
+    display: none;
+}
+
+.header-hamburger {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 9999;
+    span {
+        position: absolute;
+        left: 10px;
+        width: 30px;
+        height: 2px;
+        background-color: #18728E;
+        border-radius: 2px;
+        transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    span:nth-of-type(1) {
+        top: 15px;
+    }
+    span:nth-of-type(2) {
+        top: 24px;
+    }
+    span:nth-of-type(3) {
+        top: 33px;
+    }
+}
+
+.header-hamburger.active {
+    span:nth-of-type(1) {
+        top: 24px;
+        transform: rotate(45deg);
+    }
+    span:nth-of-type(2) {
+        opacity: 0;
+        transform: scale(0);
+    }
+    span:nth-of-type(3) {
+        top: 24px;
+        transform: rotate(-45deg);
+    }
+}
+
+.sp-header-nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    background: #e7f5f8;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 20px;
+    transition: all .2s ease;
+    li {
+        padding: 20px 0;
+    }
+}
+
+.sp-header-nav.active {
+    left: 0;
+}
+
+.header-nav {
+    display: none;
+}
+
+.header-fv {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../img/fv.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.header-fv-contents {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    top: 60%;
+    left: 10px;
+    font-weight: bold;
+    img {
+        width: 280px;
+        height: auto;
+        object-fit: contain;
+    }
+    p {
+        margin-left: 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.scrolldown {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    span {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.05em;
+        font-size: 14px;
+    }
+}
+
+.scrolldown::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #081B23;
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    animation:
+    circlemove 1.6s ease-in-out infinite,
+    cirlemovehide 1.6s ease-out infinite;
+}
+
+.scrolldown::after {
+    content: "";
+    border: 1px solid #081B23;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 2px;
+    height: 70px;
+}
+
+.loader {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(#D4F1F8, #E7F5F8);
+    position: fixed;
+    z-index: 1000;
+}
+
+.loader-item {
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .pop-dental {
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/dental_pop.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 15%;
+        transform-origin: 0;
+        animation: pop_dental .5s alternate infinite ease;
+    }
+
+    .pop-dental:nth-child(2) {
+        left: 45%;
+        animation-delay: .2s;
+    }
+
+    .pop-dental:nth-child(3){
+        left: auto;
+        right: 15%;
+        animation-delay: .3s;
+    }
+
+    .shadow {
+        width: 20px;
+        height: 4px;
+        background-color: rgba(24, 114, 142, 0.2);
+        border-radius: 50%;
+        position: absolute;
+        top: 110px;
+        left: 15%;
+        transform-origin: 50%;
+        animation: shadow .5s alternate infinite ease;
+    }
+
+    .shadow:nth-child(4) {
+        left: 45%;
+        animation-delay: .2s;
+    }
+
+    .shadow:nth-child(5) {
+        left: auto;
+        right: 15%;
+        animation-delay: .3s;
+    }
+
+    span {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        color: #FFFFFF;
+        position: absolute;
+        top: 75px;
+        left: 15%;
+        letter-spacing: 0.1em;
+    }
+}
+
+.main {
+    width: 100%;
+}
+
+.intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 70px 15px;
+
+    .img-intro {
+        width: fit-content;
+        margin: 0 auto 35px auto;
+        img {
+            width: 60px;
+            object-fit: cover;
+        }
+    }
+
+    .intro-heading {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 35px;
+        span {
+            position: relative;
+        }
+        span::after {
+            width: 100%;
+            height: 10px;
+            content: "";
+            position: absolute;
+            background-color: #e7f5f8;
+            border-radius: 10px;
+            bottom: 4px;
+            left: 0;
+            z-index: -1;
+        }
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#feature, #medical-menu, #consultation-hours, #news {
+    h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    p {
+       font-size: 18px;
+       margin-bottom: 35px;
+       font-family: "Open Sans", sans-serif;
+    }
+
+    img {
+        width: 25px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+}
+
+#feature {
+    padding: 50px 15px;
+    background-color: #F4F4F4;
+    text-align: center;
+    position: relative;
+
+    .feature-content {
+        position: relative;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        .feature-content-img {
+            width: 100%;
+            height: fit-content;
+            padding: 15px 15px 0px 15px;
+            z-index: 10;
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+
+        .feature-content-inner {
+            width: 100%;
+            border-radius: 10px;
+            text-align: right;
+            padding: 0 15px 15px 15px;
+            z-index: 1;
+            img {
+                width: 58px;
+                height: 58px;
+                object-fit: cover;
+            }
+            .feature-content-text {
+                width: 100%;
+                text-align: left;
+                h3 {
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
+                p {
+                    font-size: 16px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .blue {
+        background-color: #18728E;
+        h3, p {
+            color: #FFFFFF;
+        }
+    }
+
+    .white {
+        background-color: #FFFFFF;
+        h3, p {
+            color: #081b23;
+        }
+    }
+
+    .feature-content:last-child {
+        margin-bottom: 0;
+    }
+}
+
+#medical-menu {
+    padding: 35px 15px;
+    background: linear-gradient(#E7F5F8, #D4F1F8);
+    text-align: center;
+
+    .container {
+        padding: 35px 15px;
+        border: 2px solid #FFFFFF;
+        border-radius: 10px;
+    }
+
+    .contents {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .contents li {
+        width: 150px;
+        height: 150px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        padding: 30px 0;
+        text-align: center;
+        img {
+            width: 90px;
+            height: 60px;
+            object-fit: cover;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+#consultation-hours {
+    padding: 35px 15px;
+    text-align: center;
+
+    .container {
+        padding: 35px 15px;
+        border: 2px solid #FFFFFF;
+        border-radius: 10px;
+        max-width: 345px;
+        .img-hour img {
+            width: 100%;
+            object-fit: cover;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+#news {
+    background-color: #F4F4F4;
+    padding: 35px 15px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 1200px;
+        padding: 50px;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        text-align: center;
+    }
+
+    ul {
+        width: 100%;
+        li {
+            border-bottom: 1px dashed #081B23;
+            a {
+                display: block;
+                text-align: left;
+                padding: 30px 0;
+            }
+            p {
+                font-size: 18px;
+                margin: 0;
+            }
+            .meta {
+                display: flex;
+                align-items: center;
+            }
+            .meta p:nth-child(1) {
+                font-size: 16px;
+                margin-right: 30px;
+            }
+            .meta p:nth-child(2) {
+                font-size: 14px;
+                background-color: #E7F5F8;
+                border-radius: 30px;
+                padding: 5px 10px;
+                line-height: 1;
+            }
+        }
+        li:nth-of-type(1) {
+            a {
+                padding-top: 0;
+                padding-bottom: 30px;
+            }
+        }
+    }
+}
+
+.image {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../img/clinic_image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.footer-contents {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    margin: 0 auto;
+    padding: 70px 15px;
+
+    .footer-contents-text {
+        flex: 1;
+        max-width: 375px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .footer-logo {
+        text-align: center;
+        img {
+            width: 40px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .address {
+        margin-bottom: 15px;
+    }
+
+    .access {
+        margin-bottom: 36px;
+        h3 {
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 4px;
+        }
+        p {
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+    }
+
+    .reservation {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 36px;
+        gap: 25px;
+        text-align: center;
+        .footer-tel span {
+            font-size: 26px;
+        }
+        button {
+            width: 100%;
+            border-radius: 30px;
+            color: #FFFFFF;
+            background-color: #18728E;
+            padding: 13px 50px;
+            transition: all 0.5s ease;
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+    .sns {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        img {
+            width: 30px;
+            object-fit: cover;
+        }
+    }
+
+    .footer-contents-map {
+        flex: 1;
+        text-align: left;
+        iframe {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 10px;
+        }
+        a {
+            display: inline-block;
+        }
+        a::after {
+            font-family: "Material Symbols Outlined";
+            content: "\e89e";
+            color: #18728E;
+            vertical-align: middle;
+            font-size: 20px;
+        }
+    }
+}
+
+.footer-menu {
+    width: 100%;
+    background-color: #18728E;
+    color: #FFFFFF;
+    padding: 50px 15px;
+
+    .footer-menu-flex {
+        display: flex;
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            li:last-of-type {
+                margin-bottom: 50px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;;
+    margin: 150px auto 0 auto;
+    .news-contents {
+        article {
+            width: fit-content;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        .tag {
+            width: fit-content;
+            font-size: 14px;
+            background-color: #E7F5F8;
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+    }
+
+    .news-index {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        h2 {
+            width: fit-content;
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        li {
+            border-bottom: 1px dashed #081B23;
+            a {
+                display: block;
+                text-align: left;
+                padding: 15px 0;
+            }
+            .meta {
+                display: flex;
+                align-items: center;
+            }
+            .meta p:nth-of-type(2) {
+                font-size: 14px;
+                background-color: #E7F5F8;
+                border-radius: 30px;
+                margin-left: 5px;
+                padding: 5px 10px;
+                line-height: 1;
+            }
+        }
+
+        .nav-links {
+            margin-top: 30px;
+        }
+    }
+
+    aside {
+        width: 100%;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
+        h2 {
+            width: fit-content;
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        li {
+            border-bottom: 1px dashed #081B23;
+            a {
+                display: block;
+                text-align: left;
+                padding: 15px 0;
+            }
+            .meta {
+                display: flex;
+                align-items: center;
+            }
+            .meta p:nth-of-type(2) {
+                font-size: 14px;
+                margin-left: 20px;
+            }
+        }
+
+        button {
+            width: 100%;
+            margin-top: 30px;;
+            border-radius: 30px;
+            color: #FFFFFF;
+            background-color: #18728E;
+            padding: 13px 50px;
+            text-align: center;
+            transition: all 0.5s ease;
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+}
+
+.reservation-container {
+    max-width: 1000px;
+    margin: 100px auto 0 auto;
+    padding: 0 20px;
+    .content-header {
+        h2 {
+            font-size: 24px;
+        }
+    }
+}
+
+.not-found {
+    margin-top: 200px;
+    padding: 0 30px;
+    h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    a {
+        color: #18728E
+    }
+}
+
+.js-fade {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: all .8s;
+}
+
+.scroll {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+@media screen and (min-width: 800px) {
+
+    .header-logo {
+        h1 {
+            font-size: 26px;
+        }
+    }
+
+    .header {
+        height: 160px;
+        padding: 0 15px;
+    }
+
+    .header-flex {
+        padding: 40px 0 37.5px 0;
+    }
+
+    .header-nav {
+        display: flex;
+        gap: 40px;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        font-family: "IBM Plex Sans JP", sans-serif;
+        img {
+            width: 25px;
+            object-fit: cover;
+        }
+    }
+
+    .tel {
+        display: block;
+        text-align: right;
+        font-size: 21px;
+        span {
+            font-size: 26px;
+        }
+    }
+
+    .header-hamburger {
+        display: none;
+    }
+
+    .header-fv-contents {
+        img {
+            width: 500px;
+        }
+    }
+
+    .br-sp {
+        display: none;
+    }
+
+    #medical-menu {
+        .contents {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+    }
+
+    #consultation-hours .container {
+        max-width: 900px;
+        .img-hour img {
+            width: 100%;
+            object-fit: cover;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .footer-contents {
+        width: 80%;
+    }
+
+    .news-container {
+        width: 80%;
+        margin-top: 200px;
+        .news-contents {
+            article {
+                margin-left: 0;
+            }
+        }
+        .btn {
+            width: 100%;
+            text-align: center;
+            button {
+                width: 50%;
+            }
+        }
+    }
+
+    .reservation-container {
+        margin-top: 200px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    html {
+        scroll-padding-top: 174px;
+    }
+
+    .header {
+        padding: 0 85px;
+    }
+
+    .header-fv {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-image: url(../img/fv.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
+    .header-fv-contents {
+        left: 85px;
+        img {
+            width: 610px;
+        }
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .intro {
+        .img-intro {
+            img {
+                width: 80px;
+            }
+        }
+
+        .intro-heading {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 23px;
+        }
+    }
+
+    #feature, #medical-menu, #consultation-hours, #news {
+        h2 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        img {
+            width: 50px;
+        }
+    }
+
+    #feature {
+        padding: 70px 15px;
+
+        .feature-content {
+            position: relative;
+            margin-bottom: 120px;
+            height: 400px;
+
+            .feature-content-img {
+                max-width: 700px;
+                width: 60%;
+            }
+
+            .feature-content-inner {
+                max-width: 700px;
+                width: 60%;
+                height: 400px;
+                text-align: right;
+                padding: 0;
+                img {
+                    width: 112px;
+                    height: 112px;
+                    margin-top: 20px;
+                }
+                .feature-content-text {
+                    width: 330px;
+                    padding: 0;
+                    margin: auto;
+                    text-align: left;
+                    transform: translateX(60px);
+                    h3 {
+                        font-size: 24px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+        .blue {
+            display: flex;
+            flex-direction: row;
+            background-color: inherit;
+            .feature-content-inner {
+                background-color: #18728E;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                color: #ffffff;
+                img {
+                    margin-top: 20px;
+                    margin-right: 20px;
+                }
+            }
+        }
+        .white {
+            display: flex;
+            flex-direction: row-reverse;
+            background-color: inherit;
+            .feature-content-inner {
+                background-color: #FFFFFF;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                color: #081B23;
+                text-align: left;
+                img {
+                    margin-top: 20px;
+                    margin-left: 20px;
+                }
+                .feature-content-text {
+                    text-align: left;
+                    transform: translateX(-60px);
+                }
+            }
+        }
+    }
+
+    #medical-menu {
+        .contents {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 50px;
+            li {
+                width: 200px;
+                height: 200px;
+                padding: 40px 0;
+                img {
+                    width: 133px;
+                    height: 83px;
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    #news {
+        .container {
+            flex-direction: row;
+        }
+        ul {
+            width: 70%;
+            li {
+                .meta {
+                    margin-right: 50px;
+                }
+                a {
+                    display: flex;
+                    padding: 30px 0 30px 20px;
+                }
+            }
+            li:nth-of-type(1) a {
+                padding-top: 30px;
+            }
+       }
+    }
+
+    .image {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-image: url(../img/clinic_image.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
+    .footer-contents {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 45px;
+
+        .footer-contents-text {
+            flex: 1;
+            max-width: none;
+        }
+
+        .footer-logo {
+            text-align: left;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        .access {
+            margin-left: 20px;
+        }
+
+        .reservation {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 65px;
+            button {
+                width: auto;
+            }
+        }
+
+        .sns {
+            justify-content: left;
+            img {
+                width: 40px;
+            }
+        }
+
+        .footer-contents-map {
+            flex: 1;
+            iframe {
+                height: 400px;
+            }
+        }
+    }
+
+    .footer-menu {
+        .footer-menu-flex {
+            flex-direction: row;
+            justify-content: space-between;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+                li:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .news-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 1200px;;
+        height: fit-content;
+        margin: 200px auto 100px auto;
+        width: 100%;
+        .news-contents {
+            width: 60%;
+            margin-right: 30px;
+            article {
+               padding: 40px 0 0 30px;
+            }
+            h1 {  
+                font-size: 26px;
+                font-weight: 600;
+                margin-bottom: 25px;
+            }
+            .tag {
+              width: fit-content;
+              font-size: 14px;
+              background-color: #E7F5F8;
+              border-radius: 10px;
+              padding: 5px;
+              margin-bottom: 5px;
+              line-height: 1;
+            }
+        }
+
+        .news-index {
+            width: 60%;
+            margin-right: 30px;
+            padding-left: 30px;
+            h2 {
+                margin: 0;
+            }
+            ul li {
+                padding-left: 10px;
+            }
+        }
+
+        aside {
+            width: calc(100% - 60% - 30px);
+            margin-top: 0;
+            padding-right: 30px;
+            li {
+                padding-left: 10px;
+                border-bottom: 1px dashed #081B23;
+                a {
+                    display: block;
+                    text-align: left;
+                    padding: 15px 0;
+                }
+                .meta {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .btn {
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes circlemove {
+    0%{bottom:70px;}
+    100%{bottom:-5px;}
+}
+
+@keyframes cirlemovehide {
+    0%{opacity:0}
+    50%{opacity:1;}
+    80%{opacity:0.9;}
+    100%{opacity:0;}
+}
+
+@keyframes pop_dental {
+    0% {
+        top: 60px;
+        transform: scaleX(1.2);
+    }
+    40% {
+        transform: scaleX(1);
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes shadow {
+    0% {
+        transform: scaleX(1.5);
+    }
+    40% {
+        transform: scaleX(1);
+        opacity: .7;
+    }
+    100% {
+        transform: scaleX(.2);
+        opacity: .4;
+    }
+}
