@@ -20,5 +20,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./themes/
-        server-dir: ./wp-content/themes
+        server-dir: ./wp-content/themes/
         delete-clean: false
