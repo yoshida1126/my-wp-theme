@@ -63,14 +63,14 @@ Rails開発（学習）で培ったCircleCIの知識を応用し、本プロジ�
 <br>
 ▲ メインを選択すると、入力必須項目が追加表示されます
 <br>
-▼　このように反映されます
+▼ このように反映されます
 <img width="1077" height="454" alt="Image" src="https://github.com/user-attachments/assets/ae0464c4-a11e-4cda-86f9-3ec79afad504" />
 
 <img width="360" height="240" alt="Image" src="https://github.com/user-attachments/assets/ec1022d2-6669-4349-ba2a-06560b40577a" />
 <br>
 ▲ おすすめを選択すると、追加入力する項目は表示されません
 <br>
-▼　このように反映されます
+▼ このように反映されます
 <img width="908" height="270" alt="Image" src="https://github.com/user-attachments/assets/62e970f2-457e-4c0b-9f70-c04cd0fedc92" />
 
 
