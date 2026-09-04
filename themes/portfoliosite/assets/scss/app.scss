@@ -339,19 +339,16 @@ input[type="image"] {
     }
 
     .slideshow-background {
-        display: flex;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        align-items: center;
-        justify-content: center;
         width: 100vw;
         background-color: $bg-sub;
         margin-top: 30px;
     }
 
     .slideshow-container {
-        width: 60%;
+        width: 100%;
         overflow: hidden;
         position: relative;
     }
@@ -437,12 +434,9 @@ input[type="image"] {
     }
 
     .work-description {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
         width: fit-content;
         margin: 100px auto;
-        text-align: left;
+        overflow-wrap: break-word;
     }
 }
 
@@ -570,11 +564,5 @@ input[type="image"] {
 
     .wrapper {
         padding-bottom: 30px;
-    }
-
-    .section-detail {
-        .slideshow-container {
-            width: 100%;
-        }
     }
 }
