@@ -437,6 +437,9 @@ input[type="image"] {
         width: fit-content;
         margin: 100px auto;
         overflow-wrap: break-word;
+        a {
+            word-break: break-all;
+        }
     }
 }
 
