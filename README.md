@@ -20,12 +20,6 @@ WordPressの自作テーマのコードを管理するリポジトリです。
 - WP Multibyte Patch
 - WP-SCSS
 
-## 🏗 ディレクトリ構成とGit管理の工夫
-Rails開発（学習）で培ったCircleCIの知識を応用し、本プロジェクトではGitHub Actionsによる本番サーバーへのデプロイを完全自動化しています。
-
-- 運用の効率化とリポジトリの軽量化のため、公式プラグイン（`plugins/`）や画像（`uploads/`）は `.gitignore` で除外。
-- 自身が実装した `themes/` フォルダのみをバージョン管理しています。
-
 
 ## 地鶏割烹IRORI（飲食店のホームページを想定したサイト）
 <img width="1280" height="678" alt="Image" src="https://github.com/user-attachments/assets/bd613727-0568-4770-9d98-10132b5cdf03" />
