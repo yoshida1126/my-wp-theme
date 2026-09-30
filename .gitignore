@@ -2,4 +2,4 @@ languages/
 uploads/
 upgrade/
 plugins/
-themes/*/assets/css/
+themes/*/assets/css/app.css
