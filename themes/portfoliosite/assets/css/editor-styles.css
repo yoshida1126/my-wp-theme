@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+
+h2, p {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+p {
+    font-weight: 400;
+}
+
+.has-blue-color {
+    color: #5D6D7E;
+}
+
+.has-orange-color {
+    color: #D35400;
+}
+
+.has-white-color {
+    color: #FAFAFA;
+}
+
+.has-black-color {
+    color: #252525;
+}
+
+.has-gray-color {
+    color: #E8E8E8;
+}
+
+.has-small-font-size {
+    font-size: 0.875rem;
+}
+
+.has-normal-font-size {
+    font-size: 1rem;
+}
+
+.has-large-font-size {
+    font-size: 1.5rem;
+}
+
+.has-huge-font-size {
+    font-size: 2rem;
+}

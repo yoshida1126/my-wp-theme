@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+h2, h3 {
+    font-family: "Zen Old Mincho", serif;
+    color: #4D2E2E;
+}
+
+p {
+    font-family: "Noto Sans JP", sans-serif;
+    color: #4D2E2E;
+}
+
+.has-pink-color {
+    color: #CC8E8E;
+}
+
+.has-brown-color {
+    color: #4D2E2E;
+}
+
+.has-white-color {
+    color: #FAFAFA;
+}
+
+.has-small-font-size {
+    font-size: 0.875rem;
+}
+
+.has-normal-font-size {
+    font-size: 1rem;
+}
+
+.has-large-font-size {
+    font-size: 1.5rem;
+}
+
+.has-large-font-size {
+    font-size: 2rem;
+}
